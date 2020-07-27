@@ -26,11 +26,13 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) view;
         String text = button.getText().toString();
 
+        /* second comma denied */
         if(mTextView.getText().toString().contains(".") && text.contains(".")) {
             return;
         }
 
-        if(mTextView.getText().equals("0")) {
+        /* clear first 0, except before comma */
+        if(mTextView.getText().toString().equals("0") && !text.equals(".")) {
             mTextView.setText(text);
             return;
         }
